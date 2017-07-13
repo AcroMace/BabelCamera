@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     let cameraService = CameraService()
+    let visionService = VisionService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,9 @@ class ViewController: UIViewController {
 extension ViewController: CameraServiceDelegate {
 
     func didCapture(image: CIImage) {
-        print("Receive captured image")
-        print(image)
+        visionService.detectObject(image: image) { [weak self] label in
+            print(label)
+        }
     }
 
 }

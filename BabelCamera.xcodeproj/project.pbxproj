@@ -15,6 +15,8 @@
 		63900F3C1F17DAA400DAA187 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F3B1F17DAA400DAA187 /* CameraService.swift */; };
 		63900F3E1F17E17200DAA187 /* UIView+BindToSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */; };
 		63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F3F1F17E1D500DAA187 /* CameraPreviewView.swift */; };
+		63900F471F182DBF00DAA187 /* VisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F461F182DBF00DAA187 /* VisionService.swift */; };
+		63900F491F182DE500DAA187 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		63900F3B1F17DAA400DAA187 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BindToSuperview.swift"; sourceTree = "<group>"; };
 		63900F3F1F17E1D500DAA187 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		63900F461F182DBF00DAA187 /* VisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionService.swift; sourceTree = "<group>"; };
+		63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SqueezeNet.mlmodel; path = ../../../../Downloads/SqueezeNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,10 @@
 			children = (
 				63900F291F17DA7A00DAA187 /* AppDelegate.swift */,
 				63900F411F17E1E000DAA187 /* Camera */,
+				63900F461F182DBF00DAA187 /* VisionService.swift */,
 				63900F2B1F17DA7A00DAA187 /* ViewController.swift */,
 				63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */,
+				63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */,
 				63900F2D1F17DA7A00DAA187 /* Main.storyboard */,
 				63900F301F17DA7A00DAA187 /* Assets.xcassets */,
 				63900F321F17DA7A00DAA187 /* LaunchScreen.storyboard */,
@@ -171,7 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				63900F2C1F17DA7A00DAA187 /* ViewController.swift in Sources */,
+				63900F471F182DBF00DAA187 /* VisionService.swift in Sources */,
 				63900F3E1F17E17200DAA187 /* UIView+BindToSuperview.swift in Sources */,
+				63900F491F182DE500DAA187 /* SqueezeNet.mlmodel in Sources */,
 				63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */,
 				63900F2A1F17DA7A00DAA187 /* AppDelegate.swift in Sources */,
 				63900F3C1F17DAA400DAA187 /* CameraService.swift in Sources */,
@@ -354,6 +362,7 @@
 				63900F3A1F17DA7A00DAA187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

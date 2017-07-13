@@ -22,7 +22,7 @@ class CameraService: NSObject {
     private let stillCameraOutput = AVCapturePhotoOutput()
     private let cameraQueue = DispatchQueue(label: "cameraQueue")
 
-    var delegate: CameraServiceDelegate?
+    weak var delegate: CameraServiceDelegate?
 
     // Start getting data from teh camera
     func startSession() {
