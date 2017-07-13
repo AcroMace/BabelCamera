@@ -9,17 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let cameraService = CameraService()
+    var previewView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        cameraService.startCamera()
+        setPreview()
+        cameraService.startSession()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // Add the preview view to the back of the current view
+    private func setPreview() {
+        let previewView = cameraService.createPreviewView(bounds: view.bounds)
+        view.addSubview(previewView)
+        view.sendSubview(toBack: previewView) // Important to add UI elements on top later
+        previewView.fillSuperview()
+        self.previewView = previewView
     }
-
 
 }
-

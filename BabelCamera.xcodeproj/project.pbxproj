@@ -12,6 +12,9 @@
 		63900F2F1F17DA7A00DAA187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63900F2D1F17DA7A00DAA187 /* Main.storyboard */; };
 		63900F311F17DA7A00DAA187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63900F301F17DA7A00DAA187 /* Assets.xcassets */; };
 		63900F341F17DA7A00DAA187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63900F321F17DA7A00DAA187 /* LaunchScreen.storyboard */; };
+		63900F3C1F17DAA400DAA187 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F3B1F17DAA400DAA187 /* CameraService.swift */; };
+		63900F3E1F17E17200DAA187 /* UIView+BindToSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */; };
+		63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F3F1F17E1D500DAA187 /* CameraPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		63900F301F17DA7A00DAA187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63900F331F17DA7A00DAA187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63900F351F17DA7A00DAA187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63900F3B1F17DAA400DAA187 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BindToSuperview.swift"; sourceTree = "<group>"; };
+		63900F3F1F17E1D500DAA187 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				63900F291F17DA7A00DAA187 /* AppDelegate.swift */,
+				63900F411F17E1E000DAA187 /* Camera */,
 				63900F2B1F17DA7A00DAA187 /* ViewController.swift */,
+				63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */,
 				63900F2D1F17DA7A00DAA187 /* Main.storyboard */,
 				63900F301F17DA7A00DAA187 /* Assets.xcassets */,
 				63900F321F17DA7A00DAA187 /* LaunchScreen.storyboard */,
 				63900F351F17DA7A00DAA187 /* Info.plist */,
 			);
 			path = BabelCamera;
+			sourceTree = "<group>";
+		};
+		63900F411F17E1E000DAA187 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				63900F3B1F17DAA400DAA187 /* CameraService.swift */,
+				63900F3F1F17E1D500DAA187 /* CameraPreviewView.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +91,7 @@
 				63900F221F17DA7A00DAA187 /* Sources */,
 				63900F231F17DA7A00DAA187 /* Frameworks */,
 				63900F241F17DA7A00DAA187 /* Resources */,
+				63900F421F17EADA00DAA187 /* Run Linter */,
 			);
 			buildRules = (
 			);
@@ -130,13 +148,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		63900F421F17EADA00DAA187 /* Run Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Linter";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\n    swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63900F221F17DA7A00DAA187 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				63900F2C1F17DA7A00DAA187 /* ViewController.swift in Sources */,
+				63900F3E1F17E17200DAA187 /* UIView+BindToSuperview.swift in Sources */,
+				63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */,
 				63900F2A1F17DA7A00DAA187 /* AppDelegate.swift in Sources */,
+				63900F3C1F17DAA400DAA187 /* CameraService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
