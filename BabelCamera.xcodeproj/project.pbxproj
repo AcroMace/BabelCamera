@@ -17,6 +17,7 @@
 		63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F3F1F17E1D500DAA187 /* CameraPreviewView.swift */; };
 		63900F471F182DBF00DAA187 /* VisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F461F182DBF00DAA187 /* VisionService.swift */; };
 		63900F491F182DE500DAA187 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */; };
+		63900F4B1F1837A000DAA187 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F4A1F1837A000DAA187 /* SpeechService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		63900F3F1F17E1D500DAA187 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		63900F461F182DBF00DAA187 /* VisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionService.swift; sourceTree = "<group>"; };
 		63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SqueezeNet.mlmodel; path = ../../../../Downloads/SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		63900F4A1F1837A000DAA187 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				63900F291F17DA7A00DAA187 /* AppDelegate.swift */,
-				63900F411F17E1E000DAA187 /* Camera */,
 				63900F461F182DBF00DAA187 /* VisionService.swift */,
+				63900F411F17E1E000DAA187 /* Camera */,
+				63900F4A1F1837A000DAA187 /* SpeechService.swift */,
 				63900F2B1F17DA7A00DAA187 /* ViewController.swift */,
 				63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */,
 				63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */,
@@ -183,6 +186,7 @@
 				63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */,
 				63900F2A1F17DA7A00DAA187 /* AppDelegate.swift in Sources */,
 				63900F3C1F17DAA400DAA187 /* CameraService.swift in Sources */,
+				63900F4B1F1837A000DAA187 /* SpeechService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

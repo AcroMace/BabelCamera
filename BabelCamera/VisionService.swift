@@ -18,14 +18,15 @@ class VisionService {
         }
         let request = VNCoreMLRequest(model: model) { request, error in
             guard let results = request.results as? [VNClassificationObservation],
-                let topResult = results.first else {
+                let topResult = results.first,
+                let firstWord = topResult.identifier.components(separatedBy: ",").first else {
                     fatalError("Unexpected result type from VNCoreMLRequest")
             }
             if error != nil {
                 print(error.debugDescription)
             }
             DispatchQueue.main.async {
-                callback(topResult.identifier)
+                callback(firstWord)
             }
         }
         let handler = VNImageRequestHandler(ciImage: image)

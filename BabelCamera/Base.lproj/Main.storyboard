@@ -21,29 +21,51 @@
                                 <rect key="frame" x="295" y="0.0" width="80" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd0-U2-C7h">
-                                        <rect key="frame" x="25" y="318.5" width="30" height="30"/>
+                                        <rect key="frame" x="22" y="308" width="36" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" title="📷"/>
                                         <connections>
                                             <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z9M-qV-NXT"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="lgv-zJ-jAb"/>
                                     <constraint firstItem="hd0-U2-C7h" firstAttribute="centerY" secondItem="ARt-ZS-zXi" secondAttribute="centerY" id="uE1-Z2-EqA"/>
                                     <constraint firstItem="hd0-U2-C7h" firstAttribute="centerX" secondItem="ARt-ZS-zXi" secondAttribute="centerX" id="z4z-ai-JIf"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translated identified object" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8v0-SI-p9v">
+                                <rect key="frame" x="0.0" y="310.5" width="375" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identified object in English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoF-tu-wiT">
+                                <rect key="frame" x="73" y="352.5" width="228" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="OoF-tu-wiT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0hT-ve-DOp"/>
+                            <constraint firstItem="8v0-SI-p9v" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-16" id="7mB-oI-ACu"/>
                             <constraint firstItem="ARt-ZS-zXi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="D7F-Qf-3qe"/>
+                            <constraint firstItem="8v0-SI-p9v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IIk-2d-KLz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8v0-SI-p9v" secondAttribute="trailing" id="L8E-p7-NvI"/>
                             <constraint firstItem="ARt-ZS-zXi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OGf-zt-qaX"/>
+                            <constraint firstItem="OoF-tu-wiT" firstAttribute="top" secondItem="8v0-SI-p9v" secondAttribute="bottom" constant="8" id="fxc-lu-TxK"/>
                             <constraint firstItem="ARt-ZS-zXi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h9E-rK-0CY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="originalTextLabel" destination="OoF-tu-wiT" id="cCx-7Q-pbR"/>
+                        <outlet property="translatedTextLabel" destination="8v0-SI-p9v" id="tMd-I6-7Sp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

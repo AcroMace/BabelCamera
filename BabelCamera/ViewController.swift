@@ -11,6 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     let cameraService = CameraService()
     let visionService = VisionService()
+    let speechService = SpeechService()
+
+    @IBOutlet weak var translatedTextLabel: UILabel!
+    @IBOutlet weak var originalTextLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +23,13 @@ class ViewController: UIViewController {
         cameraService.startCamera()
         setPreview()
         cameraService.startSession()
+
+        translatedTextLabel.text = ""
+        originalTextLabel.text = ""
     }
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
+        translatedTextLabel.text = "Processing..."
         cameraService.takePicture()
     }
 
@@ -41,7 +49,9 @@ extension ViewController: CameraServiceDelegate {
 
     func didCapture(image: CIImage) {
         visionService.detectObject(image: image) { [weak self] label in
-            print(label)
+            print("Identified: \(label)")
+            self?.speechService.say(label)
+            self?.translatedTextLabel.text = label
         }
     }
 
