@@ -10,15 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     let cameraService = CameraService()
-    var previewView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        cameraService.delegate = self
         cameraService.startCamera()
         setPreview()
         cameraService.startSession()
     }
+
+    @IBAction func cameraButtonPressed(_ sender: Any) {
+        cameraService.takePicture()
+    }
+
+    // MARK: - Private methods
 
     // Add the preview view to the back of the current view
     private func setPreview() {
@@ -26,7 +32,15 @@ class ViewController: UIViewController {
         view.addSubview(previewView)
         view.sendSubview(toBack: previewView) // Important to add UI elements on top later
         previewView.fillSuperview()
-        self.previewView = previewView
+    }
+
+}
+
+extension ViewController: CameraServiceDelegate {
+
+    func didCapture(image: CIImage) {
+        print("Receive captured image")
+        print(image)
     }
 
 }
