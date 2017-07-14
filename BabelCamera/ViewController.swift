@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     let cameraService = CameraService()
     let visionService = VisionService()
     let speechService = SpeechService()
+    let translationService = TranslationService()
 
     @IBOutlet weak var translatedTextLabel: UILabel!
     @IBOutlet weak var originalTextLabel: UILabel!
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
         translatedTextLabel.text = "Processing..."
+        originalTextLabel.text = ""
         cameraService.takePicture()
     }
 
@@ -50,8 +52,14 @@ extension ViewController: CameraServiceDelegate {
     func didCapture(image: CIImage) {
         visionService.detectObject(image: image) { [weak self] label in
             print("Identified: \(label)")
-            self?.speechService.say(label)
-            self?.translatedTextLabel.text = label
+            self?.translationService.translateFromGoogle(text: label) { translation in
+                DispatchQueue.main.async {
+                    self?.translatedTextLabel.text = translation
+                    self?.originalTextLabel.text = label
+                    self?.speechService.say(translation, in: "fr-FR")
+                    self?.speechService.say(label)
+                }
+            }
         }
     }
 

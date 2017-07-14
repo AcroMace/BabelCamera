@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1936FCC2046872FF8CB18F /* Pods_BabelCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D37F11D3CDF12F4AB953498 /* Pods_BabelCamera.framework */; };
 		63900F2A1F17DA7A00DAA187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F291F17DA7A00DAA187 /* AppDelegate.swift */; };
 		63900F2C1F17DA7A00DAA187 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F2B1F17DA7A00DAA187 /* ViewController.swift */; };
 		63900F2F1F17DA7A00DAA187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63900F2D1F17DA7A00DAA187 /* Main.storyboard */; };
@@ -18,9 +19,11 @@
 		63900F471F182DBF00DAA187 /* VisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F461F182DBF00DAA187 /* VisionService.swift */; };
 		63900F491F182DE500DAA187 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */; };
 		63900F4B1F1837A000DAA187 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F4A1F1837A000DAA187 /* SpeechService.swift */; };
+		63900F4D1F183F8400DAA187 /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F4C1F183F8400DAA187 /* TranslationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D37F11D3CDF12F4AB953498 /* Pods_BabelCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabelCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63900F261F17DA7A00DAA187 /* BabelCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabelCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63900F291F17DA7A00DAA187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63900F2B1F17DA7A00DAA187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +37,9 @@
 		63900F461F182DBF00DAA187 /* VisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionService.swift; sourceTree = "<group>"; };
 		63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SqueezeNet.mlmodel; path = ../../../../Downloads/SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		63900F4A1F1837A000DAA187 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		63900F4C1F183F8400DAA187 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
+		7F1EC6CF530C7D4113F75665 /* Pods-BabelCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabelCamera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabelCamera/Pods-BabelCamera.debug.xcconfig"; sourceTree = "<group>"; };
+		F0174092903DB2C2A75D77BB /* Pods-BabelCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabelCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabelCamera/Pods-BabelCamera.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1936FCC2046872FF8CB18F /* Pods_BabelCamera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52330CD6B79197C41F5141CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F1EC6CF530C7D4113F75665 /* Pods-BabelCamera.debug.xcconfig */,
+				F0174092903DB2C2A75D77BB /* Pods-BabelCamera.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		63900F1D1F17DA7A00DAA187 = {
 			isa = PBXGroup;
 			children = (
 				63900F281F17DA7A00DAA187 /* BabelCamera */,
 				63900F271F17DA7A00DAA187 /* Products */,
+				52330CD6B79197C41F5141CC /* Pods */,
+				6F8C779AD19DC658FA95B142 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +88,7 @@
 				63900F461F182DBF00DAA187 /* VisionService.swift */,
 				63900F411F17E1E000DAA187 /* Camera */,
 				63900F4A1F1837A000DAA187 /* SpeechService.swift */,
+				63900F4C1F183F8400DAA187 /* TranslationService.swift */,
 				63900F2B1F17DA7A00DAA187 /* ViewController.swift */,
 				63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */,
 				63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */,
@@ -90,6 +109,14 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
+		6F8C779AD19DC658FA95B142 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D37F11D3CDF12F4AB953498 /* Pods_BabelCamera.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,10 +124,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63900F381F17DA7A00DAA187 /* Build configuration list for PBXNativeTarget "BabelCamera" */;
 			buildPhases = (
+				CD429569D1A9BD5D6FB8299C /* [CP] Check Pods Manifest.lock */,
 				63900F221F17DA7A00DAA187 /* Sources */,
 				63900F231F17DA7A00DAA187 /* Frameworks */,
 				63900F241F17DA7A00DAA187 /* Resources */,
 				63900F421F17EADA00DAA187 /* Run Linter */,
+				6554B143867CC5FB7B5F2DBF /* [CP] Embed Pods Frameworks */,
+				A5F946BC5124D50E965EB17C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +202,51 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\n    swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		6554B143867CC5FB7B5F2DBF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabelCamera/Pods-BabelCamera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5F946BC5124D50E965EB17C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabelCamera/Pods-BabelCamera-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD429569D1A9BD5D6FB8299C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -184,6 +259,7 @@
 				63900F3E1F17E17200DAA187 /* UIView+BindToSuperview.swift in Sources */,
 				63900F491F182DE500DAA187 /* SqueezeNet.mlmodel in Sources */,
 				63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */,
+				63900F4D1F183F8400DAA187 /* TranslationService.swift in Sources */,
 				63900F2A1F17DA7A00DAA187 /* AppDelegate.swift in Sources */,
 				63900F3C1F17DAA400DAA187 /* CameraService.swift in Sources */,
 				63900F4B1F1837A000DAA187 /* SpeechService.swift in Sources */,
@@ -321,6 +397,7 @@
 		};
 		63900F391F17DA7A00DAA187 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F1EC6CF530C7D4113F75665 /* Pods-BabelCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N92XZM98NX;
@@ -335,6 +412,7 @@
 		};
 		63900F3A1F17DA7A00DAA187 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0174092903DB2C2A75D77BB /* Pods-BabelCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N92XZM98NX;
