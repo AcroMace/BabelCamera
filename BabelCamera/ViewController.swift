@@ -62,7 +62,7 @@ extension ViewController: CameraServiceDelegate {
         visionService.detectObject(image: image) { [weak self] guess in
             guard let `self` = self else { return }
             print("Identified: \(guess)")
-            self.translationService.translateFromGoogle(text: guess) { translation in
+            self.translationService.translate(text: guess, to: .french) { translation in
                 DispatchQueue.main.async {
                     self.presentTranslations(translatedGuess: translation, guess: guess)
                 }
@@ -90,8 +90,8 @@ extension ViewController: CameraServiceDelegate {
                 self.originalTextLabel.text = guess
 
                 // Say the translations
-                self.speechService.say(translatedGuess, in: "fr-FR")
-                self.speechService.say(guess)
+                self.speechService.say(translatedGuess, in: .french, withSpeed: 0.25)
+                self.speechService.say(guess, withSpeed: 1)
 
                 // After 3 seconds, remove the blur and the words
                 self.removeTranslations()

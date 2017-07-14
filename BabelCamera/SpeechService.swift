@@ -14,11 +14,11 @@ class SpeechService {
     // http://nshipster.com/avspeechsynthesizer/
     let synthesizer = AVSpeechSynthesizer()
 
-    func say(_ text: String, in language: String = "en-GB") {
+    func say(_ text: String, in language: Language = .english, withSpeed rate: Float = 0.5) {
         let utterance = AVSpeechUtterance(string: text)
 
-        utterance.voice = AVSpeechSynthesisVoice(language: language)
-        utterance.rate = 0.5
+        utterance.voice = AVSpeechSynthesisVoice(language: language.speechString())
+        utterance.rate = rate
         utterance.pitchMultiplier = 1
 
         synthesizer.speak(utterance)
