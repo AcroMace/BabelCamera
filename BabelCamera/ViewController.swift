@@ -9,10 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let cameraService = CameraService()
-    let visionService = VisionService()
-    let speechService = SpeechService()
-    let translationService = TranslationService()
+
+    private static let animationTime = 1.0 // seconds
+    private static let wordsDisplayTime = 3.0 // seconds
+
+    private let cameraService = CameraService()
+    private let visionService = VisionService()
+    private let speechService = SpeechService()
+    private let translationService = TranslationService()
+    private let blurEffectView = UIVisualEffectView()
 
     @IBOutlet weak var translatedTextLabel: UILabel!
     @IBOutlet weak var originalTextLabel: UILabel!
@@ -27,6 +32,10 @@ class ViewController: UIViewController {
 
         translatedTextLabel.text = ""
         originalTextLabel.text = ""
+
+        blurEffectView.autoresizingMask = UIViewAutoresizing(rawValue:
+            UIViewAutoresizing.flexibleWidth.rawValue |
+            UIViewAutoresizing.flexibleHeight.rawValue)
     }
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
@@ -50,17 +59,57 @@ class ViewController: UIViewController {
 extension ViewController: CameraServiceDelegate {
 
     func didCapture(image: CIImage) {
-        visionService.detectObject(image: image) { [weak self] label in
-            print("Identified: \(label)")
-            self?.translationService.translateFromGoogle(text: label) { translation in
+        visionService.detectObject(image: image) { [weak self] guess in
+            guard let `self` = self else { return }
+            print("Identified: \(guess)")
+            self.translationService.translateFromGoogle(text: guess) { translation in
                 DispatchQueue.main.async {
-                    self?.translatedTextLabel.text = translation
-                    self?.originalTextLabel.text = label
-                    self?.speechService.say(translation, in: "fr-FR")
-                    self?.speechService.say(label)
+                    self.presentTranslations(translatedGuess: translation, guess: guess)
                 }
             }
         }
+    }
+
+    private func presentTranslations(translatedGuess: String, guess: String) {
+        blurEffectView.frame = view.bounds
+
+        UIView.animate(
+            withDuration: ViewController.animationTime,
+            delay: 0,
+            options: .curveEaseInOut,
+            animations: {
+                // Blur out the camera
+                guard UIAccessibilityIsReduceTransparencyEnabled() else {
+                    print("Not blurring since reduce transparency is enabled")
+                    return
+                }
+                self.blurEffectView.effect = UIBlurEffect(style: .dark)
+            }, completion: { _ in
+                // Show the translations
+                self.translatedTextLabel.text = translatedGuess
+                self.originalTextLabel.text = guess
+
+                // Say the translations
+                self.speechService.say(translatedGuess, in: "fr-FR")
+                self.speechService.say(guess)
+
+                // After 3 seconds, remove the blur and the words
+                self.removeTranslations()
+            })
+    }
+
+    private func removeTranslations() {
+        self.translatedTextLabel.text = ""
+        self.originalTextLabel.text = ""
+
+        UIView.animate(
+            withDuration: ViewController.animationTime,
+            delay: ViewController.wordsDisplayTime,
+            options: UIViewAnimationOptions.curveEaseInOut,
+            animations: {
+                self.blurEffectView.effect = nil
+            },
+            completion: nil)
     }
 
 }
