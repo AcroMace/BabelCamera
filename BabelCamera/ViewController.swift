@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private static let animationTime = 1.0 // seconds
+    private static let animationTime = 0.2 // seconds
     private static let wordsDisplayTime = 3.0 // seconds
 
     private let cameraService = CameraService()
@@ -21,21 +21,24 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var translatedTextLabel: UILabel!
     @IBOutlet weak var originalTextLabel: UILabel!
+    @IBOutlet weak var translateLanguageButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         cameraService.delegate = self
         cameraService.startCamera()
-        setPreview()
+        let previewView = setPreview()
         cameraService.startSession()
 
         translatedTextLabel.text = ""
         originalTextLabel.text = ""
 
+        blurEffectView.alpha = 0.9
         blurEffectView.autoresizingMask = UIViewAutoresizing(rawValue:
             UIViewAutoresizing.flexibleWidth.rawValue |
             UIViewAutoresizing.flexibleHeight.rawValue)
+        previewView.addSubview(blurEffectView)
     }
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
@@ -44,14 +47,19 @@ class ViewController: UIViewController {
         cameraService.takePicture()
     }
 
+    @IBAction func translationLanguageButtonPressed(_ sender: Any) {
+
+    }
+
     // MARK: - Private methods
 
     // Add the preview view to the back of the current view
-    private func setPreview() {
+    private func setPreview() -> UIView {
         let previewView = cameraService.createPreviewView(bounds: view.bounds)
         view.addSubview(previewView)
         view.sendSubview(toBack: previewView) // Important to add UI elements on top later
         previewView.fillSuperview()
+        return previewView
     }
 
 }
@@ -75,14 +83,8 @@ extension ViewController: CameraServiceDelegate {
 
         UIView.animate(
             withDuration: ViewController.animationTime,
-            delay: 0,
-            options: .curveEaseInOut,
             animations: {
                 // Blur out the camera
-                guard UIAccessibilityIsReduceTransparencyEnabled() else {
-                    print("Not blurring since reduce transparency is enabled")
-                    return
-                }
                 self.blurEffectView.effect = UIBlurEffect(style: .dark)
             }, completion: { _ in
                 // Show the translations
@@ -91,25 +93,23 @@ extension ViewController: CameraServiceDelegate {
 
                 // Say the translations
                 self.speechService.say(translatedGuess, in: .french, withSpeed: 0.25)
-                self.speechService.say(guess, withSpeed: 1)
+                self.speechService.say(guess)
 
                 // After 3 seconds, remove the blur and the words
-                self.removeTranslations()
+                self.perform(
+                    #selector(self.removeTranslations),
+                    with: nil,
+                    afterDelay: ViewController.wordsDisplayTime)
             })
     }
 
-    private func removeTranslations() {
+    @objc private func removeTranslations() {
         self.translatedTextLabel.text = ""
         self.originalTextLabel.text = ""
 
-        UIView.animate(
-            withDuration: ViewController.animationTime,
-            delay: ViewController.wordsDisplayTime,
-            options: UIViewAnimationOptions.curveEaseInOut,
-            animations: {
-                self.blurEffectView.effect = nil
-            },
-            completion: nil)
+        UIView.animate(withDuration: ViewController.animationTime) {
+            self.blurEffectView.effect = nil
+        }
     }
 
 }
