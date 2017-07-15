@@ -21,6 +21,7 @@ class CameraService: NSObject {
     private let session = AVCaptureSession()
     private let stillCameraOutput = AVCapturePhotoOutput()
     private let cameraQueue = DispatchQueue(label: "cameraQueue")
+    private var previewLayer: AVCaptureVideoPreviewLayer?
 
     weak var delegate: CameraServiceDelegate?
 
@@ -52,9 +53,19 @@ class CameraService: NSObject {
 
     // This is how a view can get a video feed from the camera
     func createPreviewView(bounds: CGRect) -> UIView {
-        let previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        let cameraPreviewView = CameraPreviewView(frame: bounds, previewLayer: previewLayer)
-        return cameraPreviewView
+        if self.previewLayer == nil {
+            self.previewLayer = AVCaptureVideoPreviewLayer(session: session)
+        }
+        self.previewLayer?.videoGravity = .resizeAspectFill
+        updateOrientation()
+
+        return CameraPreviewView(frame: bounds, previewLayer: previewLayer!)
+    }
+
+    // This should be called whenever the device orientation is updated
+    func updateOrientation() {
+        let applicationOrientation = UIApplication.shared.statusBarOrientation
+        previewLayer?.connection?.videoOrientation = convert(orientation: applicationOrientation)
     }
 
     func takePicture() {
@@ -76,6 +87,24 @@ class CameraService: NSObject {
             ]
             captureSettings.previewPhotoFormat = previewFormat
             self.stillCameraOutput.capturePhoto(with: captureSettings, delegate: self)
+        }
+    }
+
+    // MARK: - Private methods
+
+    // We cannot cast since .unknown is not an AVCaptureVideoOrientation
+    private func convert(orientation: UIInterfaceOrientation) -> AVCaptureVideoOrientation {
+        switch orientation {
+        case .landscapeLeft:
+            return .landscapeLeft
+        case .landscapeRight:
+            return .landscapeRight
+        case .portrait:
+            return .portrait
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        case .unknown:
+            return .portrait
         }
     }
 

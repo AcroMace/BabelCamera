@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         cameraService.startCamera()
         let previewView = setPreview()
         cameraService.startSession()
+        cameraService.updateOrientation()
 
         translatedTextLabel.text = ""
         originalTextLabel.text = ""
@@ -39,6 +40,16 @@ class ViewController: UIViewController {
             UIViewAutoresizing.flexibleWidth.rawValue |
             UIViewAutoresizing.flexibleHeight.rawValue)
         previewView.addSubview(blurEffectView)
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        coordinator.animate(
+            alongsideTransition: { [weak self] _ in
+                self?.cameraService.updateOrientation()
+            },
+            completion: nil)
     }
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
@@ -92,7 +103,7 @@ extension ViewController: CameraServiceDelegate {
                 self.originalTextLabel.text = guess
 
                 // Say the translations
-                self.speechService.say(translatedGuess, in: .french, withSpeed: 0.25)
+                self.speechService.say(translatedGuess, in: .french)
                 self.speechService.say(guess)
 
                 // After 3 seconds, remove the blur and the words
