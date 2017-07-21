@@ -11,6 +11,7 @@
 		63212C621F226E3500E066FD /* LanguagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63212C611F226E3500E066FD /* LanguagePickerViewController.swift */; };
 		63212C641F226E4900E066FD /* LanguagePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63212C631F226E4900E066FD /* LanguagePickerViewController.storyboard */; };
 		63212C671F227EC700E066FD /* String+UTF8Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63212C661F227EC700E066FD /* String+UTF8Decoding.swift */; };
+		63212C711F22C86E00E066FD /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63212C701F22C86600E066FD /* SqueezeNet.mlmodel */; };
 		63900F2A1F17DA7A00DAA187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F291F17DA7A00DAA187 /* AppDelegate.swift */; };
 		63900F2C1F17DA7A00DAA187 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F2B1F17DA7A00DAA187 /* ViewController.swift */; };
 		63900F2F1F17DA7A00DAA187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63900F2D1F17DA7A00DAA187 /* Main.storyboard */; };
@@ -20,7 +21,6 @@
 		63900F3E1F17E17200DAA187 /* UIView+BindToSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */; };
 		63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F3F1F17E1D500DAA187 /* CameraPreviewView.swift */; };
 		63900F471F182DBF00DAA187 /* VisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F461F182DBF00DAA187 /* VisionService.swift */; };
-		63900F491F182DE500DAA187 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */; };
 		63900F4B1F1837A000DAA187 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F4A1F1837A000DAA187 /* SpeechService.swift */; };
 		63900F4D1F183F8400DAA187 /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F4C1F183F8400DAA187 /* TranslationService.swift */; };
 		63900F501F195E7F00DAA187 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F4F1F195E7F00DAA187 /* Language.swift */; };
@@ -32,6 +32,7 @@
 		63212C631F226E4900E066FD /* LanguagePickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguagePickerViewController.storyboard; sourceTree = "<group>"; };
 		63212C661F227EC700E066FD /* String+UTF8Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UTF8Decoding.swift"; sourceTree = "<group>"; };
 		63212C691F22BD9300E066FD /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		63212C701F22C86600E066FD /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		63900F261F17DA7A00DAA187 /* BabelCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabelCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63900F291F17DA7A00DAA187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63900F2B1F17DA7A00DAA187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		63900F3D1F17E17200DAA187 /* UIView+BindToSuperview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BindToSuperview.swift"; sourceTree = "<group>"; };
 		63900F3F1F17E1D500DAA187 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		63900F461F182DBF00DAA187 /* VisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionService.swift; sourceTree = "<group>"; };
-		63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SqueezeNet.mlmodel; path = ../../../../Downloads/SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		63900F4A1F1837A000DAA187 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		63900F4C1F183F8400DAA187 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		63900F4F1F195E7F00DAA187 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
@@ -109,10 +109,10 @@
 				63900F4A1F1837A000DAA187 /* SpeechService.swift */,
 				63900F2B1F17DA7A00DAA187 /* ViewController.swift */,
 				63212C651F227EA500E066FD /* Extensions */,
-				63900F481F182DE500DAA187 /* SqueezeNet.mlmodel */,
 				63900F2D1F17DA7A00DAA187 /* Main.storyboard */,
 				63900F301F17DA7A00DAA187 /* Assets.xcassets */,
 				63900F321F17DA7A00DAA187 /* LaunchScreen.storyboard */,
+				63212C701F22C86600E066FD /* SqueezeNet.mlmodel */,
 				63900F351F17DA7A00DAA187 /* Info.plist */,
 				63212C691F22BD9300E066FD /* Config.xcconfig */,
 			);
@@ -285,12 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63212C711F22C86E00E066FD /* SqueezeNet.mlmodel in Sources */,
 				63900F2C1F17DA7A00DAA187 /* ViewController.swift in Sources */,
 				63900F501F195E7F00DAA187 /* Language.swift in Sources */,
 				63212C671F227EC700E066FD /* String+UTF8Decoding.swift in Sources */,
 				63900F471F182DBF00DAA187 /* VisionService.swift in Sources */,
 				63900F3E1F17E17200DAA187 /* UIView+BindToSuperview.swift in Sources */,
-				63900F491F182DE500DAA187 /* SqueezeNet.mlmodel in Sources */,
 				63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */,
 				63212C621F226E3500E066FD /* LanguagePickerViewController.swift in Sources */,
 				63900F4D1F183F8400DAA187 /* TranslationService.swift in Sources */,
