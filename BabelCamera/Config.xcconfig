@@ -1,0 +1,2 @@
+#include "Keys.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) TRANSLATE_API_KEY=@\"$(TRANSLATE_API_KEY)\"

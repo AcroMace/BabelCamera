@@ -31,6 +31,7 @@
 		63212C611F226E3500E066FD /* LanguagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePickerViewController.swift; sourceTree = "<group>"; };
 		63212C631F226E4900E066FD /* LanguagePickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguagePickerViewController.storyboard; sourceTree = "<group>"; };
 		63212C661F227EC700E066FD /* String+UTF8Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UTF8Decoding.swift"; sourceTree = "<group>"; };
+		63212C691F22BD9300E066FD /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		63900F261F17DA7A00DAA187 /* BabelCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabelCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63900F291F17DA7A00DAA187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63900F2B1F17DA7A00DAA187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 				63900F301F17DA7A00DAA187 /* Assets.xcassets */,
 				63900F321F17DA7A00DAA187 /* LaunchScreen.storyboard */,
 				63900F351F17DA7A00DAA187 /* Info.plist */,
+				63212C691F22BD9300E066FD /* Config.xcconfig */,
 			);
 			path = BabelCamera;
 			sourceTree = "<group>";
@@ -322,6 +324,7 @@
 /* Begin XCBuildConfiguration section */
 		63900F361F17DA7A00DAA187 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63212C691F22BD9300E066FD /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -379,6 +382,7 @@
 		};
 		63900F371F17DA7A00DAA187 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63212C691F22BD9300E066FD /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

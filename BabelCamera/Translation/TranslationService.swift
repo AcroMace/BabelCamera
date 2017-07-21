@@ -14,17 +14,23 @@ import SwiftyJSON
 class TranslationService {
 
     // This should be regenerated when the source code is made public
-    private let googleApiKey = "AIzaSyCmOrzE7SCZ2kAbJluNffiHe3tzDWwVW5w"
+    private let googleApiKey = Bundle.main.infoDictionary?["GoogleTranslateAPIKey"] as? String
     private let translateEndpoint = "https://translation.googleapis.com/language/translate/v2"
 
     func translate(text: String, to language: Language, callback: @escaping (String) -> Void) {
+        guard let apiKey = googleApiKey, !apiKey.isEmpty else {
+            print("Remember to copy Keys.example.xcconfig to Keys.xcconfig and replace the key!")
+            callback("Google Translate API not set")
+            return
+        }
+
         let parameters: Parameters = [
             "q": text,
             "source": Language.english.googleString(),
             "target": language.googleString()
         ]
         Alamofire.request(
-            "\(translateEndpoint)?key=\(googleApiKey)",
+            "\(translateEndpoint)?key=\(apiKey)",
             method: .post,
             parameters: parameters,
             encoding: JSONEncoding.default,

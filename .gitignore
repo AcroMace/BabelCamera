@@ -28,3 +28,6 @@ DerivedData
 # Mac
 .DS_Store
 
+# Config file
+Keys.xcconfig
+

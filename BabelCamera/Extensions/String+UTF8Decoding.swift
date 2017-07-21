@@ -22,11 +22,11 @@ extension String {
             .characterEncoding: String.Encoding.utf8.rawValue
         ]
 
-        guard let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) else {
+        guard let attributed = try? NSAttributedString(data: data, options: options, documentAttributes: nil) else {
             return nil
         }
 
-        return attributedString.string
+        return attributed.string
     }
 
 }
