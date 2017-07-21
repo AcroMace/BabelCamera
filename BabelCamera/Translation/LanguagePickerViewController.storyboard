@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zcg-em-xJ2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Language Picker View Controller-->
+        <scene sceneID="bAH-n8-x1F">
+            <objects>
+                <viewController id="Zcg-em-xJ2" customClass="LanguagePickerViewController" customModule="BabelCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="7sX-go-ZWk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CgY-dN-9WF">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CgY-dN-9WF" firstAttribute="leading" secondItem="4jA-LL-795" secondAttribute="leading" id="481-JB-R30"/>
+                            <constraint firstItem="CgY-dN-9WF" firstAttribute="top" secondItem="4jA-LL-795" secondAttribute="top" id="RwT-jb-AqC"/>
+                            <constraint firstItem="CgY-dN-9WF" firstAttribute="trailing" secondItem="4jA-LL-795" secondAttribute="trailing" id="auC-t5-XSn"/>
+                            <constraint firstItem="4jA-LL-795" firstAttribute="bottom" secondItem="CgY-dN-9WF" secondAttribute="bottom" id="coK-HQ-Vdu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4jA-LL-795"/>
+                    </view>
+                    <connections>
+                        <outlet property="languagePickerView" destination="CgY-dN-9WF" id="hSs-pb-bDa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Cv-iL-gH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-756" y="90"/>
+        </scene>
+    </scenes>
+</document>

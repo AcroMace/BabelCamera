@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5C1936FCC2046872FF8CB18F /* Pods_BabelCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D37F11D3CDF12F4AB953498 /* Pods_BabelCamera.framework */; };
+		63212C621F226E3500E066FD /* LanguagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63212C611F226E3500E066FD /* LanguagePickerViewController.swift */; };
+		63212C641F226E4900E066FD /* LanguagePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63212C631F226E4900E066FD /* LanguagePickerViewController.storyboard */; };
 		63900F2A1F17DA7A00DAA187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F291F17DA7A00DAA187 /* AppDelegate.swift */; };
 		63900F2C1F17DA7A00DAA187 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63900F2B1F17DA7A00DAA187 /* ViewController.swift */; };
 		63900F2F1F17DA7A00DAA187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63900F2D1F17DA7A00DAA187 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		1D37F11D3CDF12F4AB953498 /* Pods_BabelCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabelCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63212C611F226E3500E066FD /* LanguagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePickerViewController.swift; sourceTree = "<group>"; };
+		63212C631F226E4900E066FD /* LanguagePickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguagePickerViewController.storyboard; sourceTree = "<group>"; };
 		63900F261F17DA7A00DAA187 /* BabelCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabelCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63900F291F17DA7A00DAA187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63900F2B1F17DA7A00DAA187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 			children = (
 				63900F4C1F183F8400DAA187 /* TranslationService.swift */,
 				63900F4F1F195E7F00DAA187 /* Language.swift */,
+				63212C611F226E3500E066FD /* LanguagePickerViewController.swift */,
+				63212C631F226E4900E066FD /* LanguagePickerViewController.storyboard */,
 			);
 			path = Translation;
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 				63900F341F17DA7A00DAA187 /* LaunchScreen.storyboard in Resources */,
 				63900F311F17DA7A00DAA187 /* Assets.xcassets in Resources */,
 				63900F2F1F17DA7A00DAA187 /* Main.storyboard in Resources */,
+				63212C641F226E4900E066FD /* LanguagePickerViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +278,7 @@
 				63900F3E1F17E17200DAA187 /* UIView+BindToSuperview.swift in Sources */,
 				63900F491F182DE500DAA187 /* SqueezeNet.mlmodel in Sources */,
 				63900F401F17E1D500DAA187 /* CameraPreviewView.swift in Sources */,
+				63212C621F226E3500E066FD /* LanguagePickerViewController.swift in Sources */,
 				63900F4D1F183F8400DAA187 /* TranslationService.swift in Sources */,
 				63900F2A1F17DA7A00DAA187 /* AppDelegate.swift in Sources */,
 				63900F3C1F17DAA400DAA187 /* CameraService.swift in Sources */,

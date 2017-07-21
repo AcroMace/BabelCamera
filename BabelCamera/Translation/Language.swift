@@ -8,7 +8,7 @@
 
 import Foundation
 
-// swiftlint:disable cyclomatic_complexity function_body_length
+// swiftlint:disable cyclomatic_complexity function_body_length type_body_length
 
 enum Language {
     // These are the languages available for both speech and translation
@@ -23,7 +23,7 @@ enum Language {
     case french
     case german
     case greek
-    case hewbrew
+    case hebrew
     case hindi
     case hungarian
     case indonesian
@@ -40,6 +40,76 @@ enum Language {
     case swedish
     case thai
     case turkish
+
+    static func all() -> [Language] {
+        return [.arabic, .chineseSimplified, .chineseTraditional, .czech, .danish,
+                .dutch, .english, .finnish, .french, .german, .greek, .hebrew,
+                .hindi, .hungarian, .indonesian, .italian, .japanese, .korean,
+                .norwegian, .polish, .portuguese, .romanian, .russian, .slovak,
+                .spanish, .swedish, .thai, .turkish]
+    }
+
+    // Description of the language for display
+    func description() -> String {
+        switch self {
+        case .arabic:
+            return "Arabic"
+        case .chineseSimplified:
+            return "Chinese (Simplified)"
+        case .chineseTraditional:
+            return "Chinese (Traditional)"
+        case .czech:
+            return "Czech"
+        case .danish:
+            return "Danish"
+        case .dutch:
+            return "Dutch"
+        case .english:
+            return "English"
+        case .finnish:
+            return "Finnish"
+        case .french:
+            return "French"
+        case .german:
+            return "German"
+        case .greek:
+            return "Greek"
+        case .hebrew:
+            return "Hewbrew"
+        case .hindi:
+            return "Hindi"
+        case .hungarian:
+            return "Hungarian"
+        case .indonesian:
+            return "Indonesian"
+        case .italian:
+            return "Italian"
+        case .japanese:
+            return "Japanese"
+        case .korean:
+            return "Korean"
+        case .norwegian:
+            return "Norwegian"
+        case .polish:
+            return "Polish"
+        case .portuguese:
+            return "Portuguese"
+        case .romanian:
+            return "Romanian"
+        case .russian:
+            return "Russian"
+        case .slovak:
+            return "Slovak"
+        case .spanish:
+            return "Spanish"
+        case .swedish:
+            return "Swedish"
+        case .thai:
+            return "Thai"
+        case .turkish:
+            return "Turkish"
+        }
+    }
 
     // BCP-47 codes
     // http://nshipster.com/avspeechsynthesizer/
@@ -71,7 +141,7 @@ enum Language {
             return "de-DE"
         case .greek:
             return "el-GR"
-        case .hewbrew:
+        case .hebrew:
             return "he-IL"
         case .hindi:
             return "hi-IN"
@@ -136,7 +206,7 @@ enum Language {
             return "de"
         case .greek:
             return "el"
-        case .hewbrew:
+        case .hebrew:
             return "iw"
         case .hindi:
             return "hi"

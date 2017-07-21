@@ -29,8 +29,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxP-Bp-jqS">
-                                        <rect key="frame" x="25" y="479" width="30" height="30"/>
-                                        <state key="normal" title="FR">
+                                        <rect key="frame" x="19.5" y="479" width="41" height="30"/>
+                                        <state key="normal" title="LANG">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
