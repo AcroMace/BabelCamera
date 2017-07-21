@@ -36,12 +36,13 @@ class TranslationService {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    guard let translation = json["data"]["translations"][0]["translatedText"].string else {
+                    guard let translation = json["data"]["translations"][0]["translatedText"].string,
+                        let decodedTranslation = translation.decodeUTF8() else {
                         print("Translation failed or invalid JSON: \(json)")
                         return
                     }
-                    print("Translation successful: \(translation)")
-                    callback(translation)
+                    print("Translation successful: \(decodedTranslation)")
+                    callback(decodedTranslation)
                 case .failure(let error):
                     print(error)
                 }
