@@ -30,9 +30,20 @@ class TranslationService {
             encoding: JSONEncoding.default,
             headers: nil
         )
-            .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
+                guard let statusCode = response.response?.statusCode else {
+                    print("Status code for response not found")
+                    print(response)
+                    callback("Translation failed: check connection")
+                    return
+                }
+                guard case 200..<300 = statusCode else {
+                    print("Google translation API request failed")
+                    print(response)
+                    callback("Translation failed (Status \(statusCode))")
+                    return
+                }
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
@@ -45,6 +56,7 @@ class TranslationService {
                     callback(decodedTranslation)
                 case .failure(let error):
                     print(error)
+                    callback(error.localizedDescription)
                 }
             }
     }
