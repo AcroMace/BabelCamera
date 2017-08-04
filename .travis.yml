@@ -1,0 +1,10 @@
+language: objective-c
+osx_image: xcode9
+xcode_workspace: BabelCamera.xcworkspace
+xcode_scheme: BabelCamera 
+
+install:
+  - ./Scripts/install_swiftlint.sh
+
+script:
+  - set -o pipefail && xcodebuild test -workspace BabelCamera.xcworkspace -scheme BabelCamera -destination 'platform=iOS Simulator,name=iPad Pro (12.9-inch)' | xcpretty

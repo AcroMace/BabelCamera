@@ -1,5 +1,7 @@
 # BabelCamera
 
+[![Build Status](https://travis-ci.org/AcroMace/BabelCamera.svg?branch=master)](https://travis-ci.org/AcroMace/BabelCamera) [![DUB](https://img.shields.io/dub/l/vibe-d.svg?maxAge=2592000)](https://github.com/AcroMace/BabelCamera/blob/master/LICENSE)
+
 Find out how to describe the things around you in another language!
 
 An iOS app using [Core ML](https://developer.apple.com/documentation/coreml) and the [Vision framework](https://developer.apple.com/documentation/vision) in iOS 11 as well as the [Google Translate API](https://cloud.google.com/translate).
