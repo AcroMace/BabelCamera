@@ -76,7 +76,8 @@ class CameraService: NSObject {
             }
 
             let captureSettings = AVCapturePhotoSettings()
-            guard let previewPixelType = captureSettings.availablePreviewPhotoPixelFormatTypes.first else {
+            // Underscores added in Xcode 9 beta 4
+            guard let previewPixelType = captureSettings.__availablePreviewPhotoPixelFormatTypes.first else {
                 print("Could not find any available preview photo pixel format types")
                 return
             }
@@ -109,7 +110,8 @@ class CameraService: NSObject {
     }
 
     private func getBackCameraInput() -> AVCaptureDeviceInput? {
-        guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
+        // It seems that specifying the back camera is no longer available in Xcode 9 beta 4?
+        guard let backCamera = AVCaptureDevice.default(for: .video) else {
             print("Could not get the back camera")
             return nil
         }
